@@ -1,4 +1,6 @@
-export default function TwoColumnText() {
+import React from 'react';
+
+export default function TwoColumnText(): React.JSX.Element {
   return (
     <div className="flex flex-col md:flex-row text-xs">
       <div className="w-full md:w-1/2">

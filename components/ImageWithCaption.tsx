@@ -1,4 +1,12 @@
-export default function ImageWithCaption({ desktopSrc, mobileSrc, caption }) {
+import React from 'react';
+
+interface ImageWithCaptionProps {
+  desktopSrc: string;
+  mobileSrc: string;
+  caption: string;
+}
+
+export default function ImageWithCaption({ desktopSrc, mobileSrc, caption }: ImageWithCaptionProps): React.JSX.Element {
   return (
     <div className="group relative">
       <img

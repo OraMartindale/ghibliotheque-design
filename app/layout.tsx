@@ -1,11 +1,17 @@
 import './globals.css'
+import { Metadata } from 'next'
+import React, { ReactNode } from 'react'
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Ghibliotheque - Nausicaä',
   description: 'Nausicaä of the Valley of the Wind (1984)',
 }
 
-export default function RootLayout({ children }) {
+interface RootLayoutProps {
+  children: ReactNode
+}
+
+export default function RootLayout({ children }: RootLayoutProps): React.JSX.Element {
   return (
     <html lang="en">
       <head>
