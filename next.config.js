@@ -2,6 +2,8 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  output: 'export',  // Enable static exports
+  basePath: process.env.NODE_ENV === 'production' ? '/ghibliotheque-design' : '', // Match your repo name
   images: {
     domains: [
       // Nausicaa page images
@@ -21,7 +23,10 @@ const nextConfig = {
       'amherstwire.com',
       'soranews24.com',
     ],
+    unoptimized: true, // Required for static export
   },
+  // This setting prevents route handling conflicts with GitHub Pages
+  trailingSlash: true,
 }
 
 module.exports = nextConfig
