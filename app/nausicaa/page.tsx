@@ -1,35 +1,47 @@
 import React from 'react';
+import { Metadata } from 'next';
 import ImageWithCaption from '../../components/ImageWithCaption';
 import TwoColumnText from '../../components/TwoColumnText';
+import FilmTitleCard from '../../components/FilmTitleCard';
+import ReviewCard from '../../components/ReviewCard';
+import ReviewFooter from '../../components/ReviewFooter';
+
+export const metadata: Metadata = {
+  title: 'Ghibliotheque - Nausicaä of the Valley of the Wind',
+  description: 'Exploring Hayao Miyazaki\'s post-apocalyptic masterpiece from 1984',
+};
 
 export default function NausicaaPage(): React.JSX.Element {
+  const filmColorClass = "bg-green-700"; // Changed variable name to clarify it's a CSS class
+  
   return (
     <div className="mx-auto px-4 *:mt-5 md:max-w-4xl">
+      {/* Hero Image */}
       <ImageWithCaption 
         desktopSrc="https://images.amcnetworks.com/ifccenter.com/wp-content/uploads/2019/12/nausicaa_01_nvw1012945.jpg"
         mobileSrc="https://miro.medium.com/v2/resize:fit:1024/1*mxd-iWJwsTxYGbTgdBv12g.jpeg"
         caption="Nausicaä flies through the Valley of the Wild and onto screens, in Ghibli's first feature"
       />
 
-      <div className="bg-green-700 rounded-lg p-6 uppercase">
-        <p className="text-2xl md:text-5xl border-b-2 border-b-black">
-          nausica&auml;	of the valley of the wind (kaze no tani no naushika, 1984)
-        </p>
-        <p className="font-thin text-lg md:text-2xl">
-          The first wind rises
-        </p>
-        <div className="text-xs mt-12">
-          <p>Directed by: Hayao Miyazaki</p>
-          <p>Written by: Hayao Miyazaki</p>
-          <p>Lentth: 1Hr 57Min</p>
-          <p>Release Date (Japan): 11 March 1984</p>
-        </div>
-      </div>
+      {/* Film Title Card */}
+      <FilmTitleCard
+        title="nausica&auml; of the valley of the wind"
+        originalTitle="kaze no tani no naushika"
+        year="1984"
+        tagline="The first wind rises"
+        director="Hayao Miyazaki"
+        writer="Hayao Miyazaki"
+        length="1Hr 57Min"
+        releaseDate="11 March 1984"
+        className={filmColorClass} // Pass as className
+      />
 
+      {/* Film Description */}
       <p className="text-right text-sm uppercase leading-loose">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vitae est nec arcu rhoncus lacinia. Integer id nibh non leo aliquam viverra. Donec ut suscipit purus, sed scelerisque dui. Quisque porttitor augue neque, et laoreet risus posuere vel. Aliquam vehicula nibh eu elit fermentum varius. Aliquam condimentum lorem tellus, id elementum sapien elementum eget. Nullam semper quam vel libero tempor consequat. Aliquam faucibus tempus vulputate. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam tincidunt egestas.
       </p>
 
+      {/* Content Sections */}
       <ImageWithCaption 
         desktopSrc="https://www.brightwalldarkroom.com/wp-content/uploads/2020/10/Nausicaa2-1-e1602752195952.jpg"
         mobileSrc="https://m.media-amazon.com/images/M/MV5BYzZkMGUxNWItMGU0Zi00YmQ0LTljNmItNzYxYTg5N2M2N2Y0XkEyXkFqcGc@._V1_QL75_UY281_CR13,0,500,281_.jpg"
@@ -103,14 +115,11 @@ export default function NausicaaPage(): React.JSX.Element {
         </div>
       </div>
 
-      <div className="flex justify-between bg-green-700 rounded-lg p-6">
-        <p className="text-md uppercase">
-          Review<span className="hidden md:inline">: nausica&auml;	of the valley of the wind</span>
-        </p>
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6 stroke-white">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
-        </svg>      
-      </div>
+      {/* Review Card */}
+      <ReviewCard 
+        filmTitle="nausica&auml; of the valley of the wind" 
+        className={filmColorClass} // Pass as className
+      />
 
       <TwoColumnText />
 
