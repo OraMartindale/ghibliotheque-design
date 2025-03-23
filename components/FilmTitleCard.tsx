@@ -9,7 +9,7 @@ interface FilmTitleCardProps {
   writer: string;
   length: string;
   releaseDate: string;
-  className?: string; // Changed from bgColor to className
+  className?: string;
 }
 
 export default function FilmTitleCard({
@@ -21,12 +21,12 @@ export default function FilmTitleCard({
   writer,
   length,
   releaseDate,
-  className = "bg-gray-700" // Default color
+  className = "bg-gray-700"
 }: FilmTitleCardProps): React.JSX.Element {
   return (
-    <div className={`${className} rounded-lg p-6 uppercase`}>
-      <p className="text-2xl md:text-5xl border-b-2 border-b-black">
-        {title} ({originalTitle}, {year})
+    <div className={`${className} rounded-lg p-6 md:px-16 md:pr-48 md:pb-16 md:pt-32 uppercase`}>
+      <p className="text-2xl border-b-2 border-b-black">
+        {title}<br />({originalTitle}, {year})
       </p>
       <p className="font-thin text-lg md:text-2xl">
         {tagline}
