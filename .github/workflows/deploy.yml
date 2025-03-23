@@ -32,4 +32,5 @@ jobs:
         with:
           branch: gh-pages
           folder: out
+          target-folder: /ghibliotheque-design
           clean: true
